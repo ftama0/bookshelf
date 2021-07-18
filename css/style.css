@@ -1,3 +1,7 @@
+html{
+    background-color: #34373C;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -17,29 +21,46 @@ input, button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: cornflowerblue;
-    color: white;
+    background-color: #202225;
+    color: #7289DA;
 }
 
 main {
-    max-width: 800px;
+    max-width: 900px;
     width: 80%;
     margin: 0 auto;
     padding: 16px;
 
 }
-
+input{
+    background-color: #40444B;
+    color: whitesmoke;
+}
+.reset{
+    background-color: #4752C4;
+    border-style: none;
+    border: 1px solid #4752C4;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    margin-left: 10px;
+}
+.reset:hover{
+    background-color: #5e47c4;
+    cursor: pointer;
+}
 .input_section {
     display: flex;
     flex-direction: column;
     padding: 16px;
-    border: 1px solid black;
+    border: 1px solid #202225;
     border-radius: 10px;
+    background-color: #202225;
 }
 
 .input_section > h2 {
     text-align: center;
-    color: cornflowerblue;
+    color: white
 }
 
 .input_section > form > .input {
@@ -47,14 +68,18 @@ main {
 }
 
 .input_section > form > button {
-    background-color: cornflowerblue;
-    color: white;
+    background-color: #4752C4;
+    color: whitesmoke;
     border: 0;
     border-radius: 5px;
     display: block;
     width: 100%;
     padding: 8px;
     cursor: pointer;
+}
+.input_section > form > button:hover {
+    background-color: #5e47c4;
+    color: whitesmoke;
 }
 
 .input_section > form > button > span {
@@ -71,7 +96,7 @@ main {
 
 
 .input_section > form > .input > label {
-    color: cornflowerblue;
+    color: white;
     font-weight: bold;
 }
 
@@ -82,7 +107,7 @@ main {
 }
 
 .input_section > form > .input_inline > label {
-    color: cornflowerblue;
+    color: #4783c4;
     font-weight: bold;
     margin-right: 10px;
 }
@@ -93,12 +118,14 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 16px;
-    border: 1px solid black;
+    border: 1px solid #202225;
     border-radius: 10px;
+    background-color: #202225;
+    color: whitesmoke;
 }
 
 .search_section > h2 {
-    color: cornflowerblue;
+    color: whitesmoke;
 }
 
 .search_section > form {
@@ -120,22 +147,39 @@ main {
 }
 
 .search_section > form > button {
-    background-color: cornflowerblue;
+    background-color: #4752C4;
     color: white;
     border: 0;
     border-radius: 5px;
     cursor: pointer;
 }
-
+.book_item{
+    background-color: #2C2F33;
+    border : 1px solid #2C2F33 !important;
+}
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 .book_shelf {
+    float: left;
+    width: 50%;
+    height: 100%;
     margin: 16px 0 0 0;
-    border: 1px solid black;
+    border: 1px solid #3c3c3c;
     padding: 16px;
     border-radius: 10px;
+    color: whitesmoke;
+    background-color: #202225;
 }
-
+@media screen and (max-width: 600px) {
+    .book {
+      width: 100%;
+    }
+  }
 .book_shelf > h2 {
-    color: cornflowerblue;
+    color: white;
 }
 
 .book_shelf > .book_list {
@@ -156,17 +200,92 @@ main {
 .book_shelf > .book_list > .book_item > .action > button {
     border: 0;
     padding: 5px;
-    margin: 0 5px 0 0;
+    margin: 6px 6px 6px 6px;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .book_shelf > .book_list > .book_item > .action > .green {
-    background-color: darkgreen;
+    background-color: #346751;
     color: white;
+    white-space: pre;
 }
 
 .book_shelf > .book_list > .book_item > .action > .red {
-    background-color: darkred;
+    background-color: #CD113B;
     color: white;
 }
+.book_shelf > .book_list > .book_item > .action > .blue {
+    background-color: rgb(0, 87, 144);
+    color: white;
+}
+.book_shelf > .book_list > .book_item > .action > .yellow{
+    background-color: rgb(4, 61, 99);
+    color: white;
+}
+
+.open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+  }
+  
+ 
+  .form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  
+
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+  
+ 
+  .form-container input[type=text], .form-container input[type=number] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    color: black;
+  }
+  
+ 
+  .form-container input[type=text]:focus, .form-container input[type=number]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+
+  .btn {
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  
+  .form-container .cancel {
+    background-color: #df2935;
+  }
+  
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }

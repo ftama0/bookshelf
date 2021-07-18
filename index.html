@@ -7,15 +7,17 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bookshelf Apps</title>
+    <link rel="shortcut icon" type="image/jpg" href="assets/book.png"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <header class="head_bar">
-        <h1 class="head_bar__title">Bookshelf Apps</h1>
+        <i class="fa fa-book" style="font-size: 28px;"></i> <h1 style="padding-left: 10px;" class="head_bar__title">Bookshelf Apps</h1>
     </header>
     <main>
         <section class="input_section">
@@ -23,47 +25,73 @@
             <form id="inputBook">
                 <div class="input">
                     <label for="inputBookTitle">Judul</label>
-                    <input id="inputBookTitle" type="text" required>
+                    <input id="inputBookTitle" type="text" required placeholder="Masukan Judul Buku">
                 </div>
                 <div class="input">
                     <label for="inputBookAuthor">Penulis</label>
-                    <input id="inputBookAuthor" type="text" required>
+                    <input id="inputBookAuthor" type="text" required placeholder="Masukan Penulis Buku">
                 </div>
                 <div class="input">
                     <label for="inputBookYear">Tahun</label>
-                    <input id="inputBookYear" type="number" required>
+                    <input id="inputBookYear" type="number"required placeholder="Masukan Tahun Buku">
                 </div>
                 <div class="input_inline">
-                    <label for="inputBookIsComplete">Selesai dibaca</label>
+                    <i class="fa fa-check-square-o"  style="color:rgb(42, 206, 130)"></i> <label for="inputBookIsComplete"> Selesai dibaca</label>
                     <input id="inputBookIsComplete" type="checkbox">
                 </div>
-                <button id="bookSubmit" type="submit">Masukkan Buku ke rak <span>Belum selesai dibaca</span></button>
+                <div class="input_inline">
+                    <i class="fa fa-refresh fa-spin" style="color:rgb(42, 206, 130)"></i>  <input class="reset" id="reset" type="reset">
+                </div>
+                <button id="bookSubmit" type="submit"> <span>Submit </span><i class="fa fa-floppy-o" style="font-size:18px"></i></button>
             </form>
         </section>
 
         <section class="search_section">
-            <h2>Cari Buku (Opsional)</h2>
+            <h2 class="title_search">Cari Buku</h2>
             <form id="searchBook">
                 <label for="searchBookTitle">Judul</label>
                 <input id="searchBookTitle" type="text" required placeholder="Masukan Judul Buku">
-                <button id="searchSubmit" type="submit">Cari </button>
+                <button id="searchSubmit" type="submit">Cari <i class="fa fa-search"></i></button>
             </form>
         </section>
+        <div class="row">
+            <section class="book_shelf" id="search_before">
+                <h2><i class="fa fa-minus-square-o" style="color:rgb(206, 42, 42)"></i> Belum selesai dibaca</h2>
 
-        <section class="book_shelf" id="search_before">
-            <h2>Belum selesai dibaca</h2>
+                <div id="incompleteBookshelfList" class="book_list">
+                </div>
+            </section>
 
-            <div id="incompleteBookshelfList" class="book_list">
-            </div>
-        </section>
+            <section class="book_shelf" id="search_after">
+                <h2><i class="fa fa-check-square-o"  style="color:rgb(42, 206, 143)"></i> Selesai dibaca</h2>
 
-        <section class="book_shelf" id="search_after">
-            <h2>Selesai dibaca</h2>
-
-            <div id="completeBookshelfList" class="book_list">
-            </div>
-        </section>
+                <div id="completeBookshelfList" class="book_list">
+                </div>
+            </section>
+        </div>
     </main>
+
+
+    <div class="form-popup" id="myForm">
+        <form class="form-container" id="editBook">
+            <h1>Edit Buku</h1><br>
+
+            <label for="Judul"><b>Judul Buku</b></label>
+            <input id="editBookTitle" type="text" name="judul" required>
+
+            <label for="Penulis"><b>Penulis</b></label>
+            <input id="editBookAuthor" type="text" name="penulis" required>
+
+            <label for="Tahun"><b>Tahun</b></label>
+            <input id="editBookYear" type="number" name="tahun" required>
+            <div class="input_inline">
+                <label for="editStatus">Selesai dibaca</label>
+                <input id="editStatus" type="checkbox">
+            </div><br>
+            <p style="font-size:12px;"><b>Note :</b>Klik [Simpan Edit Buku] untuk ubah Buku</p>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
     <script src="js/main.js" type="text/javascript"></script>
     <script src="js/dom.js" type="text/javascript"></script>
     <script src="js/script.js" type="text/javascript"></script>

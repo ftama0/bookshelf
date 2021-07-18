@@ -1,25 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const submitForm /* HTMLFormElement */ = document.getElementById("inputBook");
+    const submitForm = document.getElementById("inputBook");
 
     submitForm.addEventListener("submit", function (event) {
         event.preventDefault();
-        
         addBook();
     });
 
-    const searchForm /* HTMLFormElement */ = document.getElementById("searchBook");
+    const searchForm = document.getElementById("searchBook");
 
     searchForm.addEventListener("submit", function (event) {
         event.preventDefault();
         search();
-        // refreshSearch();
     });
 
     if (isStorageExist()) {
         loadDataFromStorage();
     }
-
 });
 
 document.addEventListener("ondatasaved", () => {
@@ -27,5 +24,5 @@ document.addEventListener("ondatasaved", () => {
 });
 
 document.addEventListener("ondataloaded", () => {
-    refreshDataFromBooks(); //pindah pling atas
+    refreshDataFromBooks();
 });
